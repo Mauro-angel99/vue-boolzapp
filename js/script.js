@@ -96,11 +96,19 @@ const root = new Vue({
 
             this.contacts[i].visible = true
         },
-        addMessage(i) {
+        addMessageSent(i) {
             if (this.user.messages) {
                 this.contacts[i].messages.push({ text: this.user.messages, date: `10/01/2020 15:50:00`, status: `sent` })
                 this.user.messages = ``
             }
+
+            setTimeout(() => {
+                this.contacts[i].messages.push({
+                    text: `ciao`, date: `10/01/2020 15:50:03`, status: `received`
+                })
+            }, 3000
+            )
+
         }
     }
 
