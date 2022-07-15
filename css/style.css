@@ -90,6 +90,7 @@
 .contact {
     height: 90px;
     border-top: 1px solid #B1B1B1;
+    cursor: pointer;
 }
 
 /* message */
@@ -133,6 +134,7 @@
     padding: 15px;
 }
 
+
 .message .date {
     display: block;
     font-size: 12px;
@@ -149,4 +151,8 @@
     width: 60px;
     color: #6B7376;
     font-size: 26px;
+}
+
+.none {
+    display: none;
 }
