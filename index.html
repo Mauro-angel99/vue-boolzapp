@@ -86,7 +86,9 @@
                     <div class="write-icon d-flex justify-content-center">
                         <i class="fa-solid fa-face-smile"></i>
                     </div>
-                    <input type="text" class="form-control" placeholder="Scrivi un messaggio">
+                    <input v-for="(contact, i) in contacts" :class="{'none' : contact.visible !== true}"
+                        v-model="user.messages" @keyup.enter="addMessage(i)" type="text" class="form-control"
+                        placeholder="Scrivi un messaggio">
                     <div class="write-icon d-flex justify-content-center">
                         <i class="fa-solid fa-microphone"></i>
                     </div>
