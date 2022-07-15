@@ -1,0 +1,152 @@
+#root {
+    height: 100vh;
+    background-image: linear-gradient(#009688 15%, #DBDBD2 15%, #D5DBD8 100%);
+}
+
+#background {
+    height: 100vh;
+}
+
+#side-bar {
+    background-color: #FAFAFA;
+    height: 100%;
+}
+
+#message {
+    height: 100%;
+}
+
+
+/* sidebar */
+
+.user {
+    background-color: #EAEAEA;
+    height: 90px;
+}
+
+#img-user {
+    height: 70px;
+    border-radius: 50%;
+}
+
+.user-icon {
+    width: 110px;
+    color: #B1B1B1;
+    font-size: 22px;
+}
+
+.notification {
+    height: 90px;
+    background-color: #8EDAFC;
+}
+
+.icon-notification {
+    height: 60px;
+    width: 60px;
+    background-color: white;
+    border-radius: 50%;
+    color: #8EDAFC;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.notification-new {
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.notification-descktop {
+    font-size: 12px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.fa-magnifying-glass {
+    color: #B1B1B1;
+}
+
+.btn {
+    background-color: white;
+    border: 1px solid #B1B1B1;
+}
+
+.form-control {
+    border: 1px solid #B1B1B1;
+
+}
+
+.contacts {
+    padding: 0;
+    text-decoration: none;
+    height: calc(100% - 226px);
+    overflow-y: scroll;
+}
+
+
+.contact {
+    height: 90px;
+    border-top: 1px solid #B1B1B1;
+}
+
+/* message */
+
+.access {
+    font-size: 12px;
+}
+
+.chat {
+    height: calc(100% - 180px);
+    background-image: url(../img/mine.jpg);
+    overflow-y: scroll;
+}
+
+.message {
+    list-style: none;
+    padding: 15px;
+    display: flex;
+}
+
+.sent {
+    justify-content: flex-end;
+}
+
+.sent-background {
+    background-color: #D5F9BA;
+    border-radius: 8px;
+
+    padding: 15px;
+}
+
+
+.received {
+    justify-content: flex-start;
+}
+
+.received-background {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+
+    padding: 15px;
+}
+
+.message .date {
+    display: block;
+    font-size: 12px;
+    color: grey;
+    text-align: end;
+}
+
+.write {
+    height: 90px;
+    background-color: #F3EEEA;
+}
+
+.write-icon {
+    width: 60px;
+    color: #6B7376;
+    font-size: 26px;
+}
