@@ -1,10 +1,15 @@
+
+
+
 const root = new Vue({
     el: `#root`,
     data: {
+        contactActive: 0,
         user: {
             name: 'Nome Utente',
             avatar: '_io',
-            messages: ``
+            messages: ``,
+            search: '',
         },
         contacts: [
             {
@@ -31,7 +36,7 @@ const root = new Vue({
             {
                 name: 'Fabio',
                 avatar: '_2',
-                visible: false,
+                visible: true,
                 messages: [{
                     date: '20/03/2020 16:30:00',
                     text: 'Ciao come stai?',
@@ -52,7 +57,7 @@ const root = new Vue({
             {
                 name: 'Samuele',
                 avatar: '_3',
-                visible: false,
+                visible: true,
                 messages: [{
                     date: '28/03/2020 10:10:40',
                     text: 'La Marianna va in campagna',
@@ -73,7 +78,7 @@ const root = new Vue({
             {
                 name: 'Luisa',
                 avatar: '_4',
-                visible: false,
+                visible: true,
                 messages: [{
                     date: '10/01/2020 15:30:55',
                     text: 'Lo sai che ha aperto una nuova pizzeria?',
@@ -90,26 +95,37 @@ const root = new Vue({
     },
     methods: {
         clickContact(i) {
-            for (let i = 0; i < this.contacts.length; i++) {
-                this.contacts[i].visible = false
-            }
-
-            this.contacts[i].visible = true
+            this.contactActive = i
         },
         addMessageSent(i) {
             if (this.user.messages) {
-                this.contacts[i].messages.push({ text: this.user.messages, date: `10/01/2020 15:50:00`, status: `sent` })
+                this.contacts[i].messages.push({ text: this.user.messages, date: dayjs().format('DD/MM/YYYY HH:mm:ss'), status: `sent` })
                 this.user.messages = ``
             }
 
             setTimeout(() => {
                 this.contacts[i].messages.push({
-                    text: `ciao`, date: `10/01/2020 15:50:03`, status: `received`
+                    text: `ciao`, date: dayjs().format('DD/MM/YYYY HH:mm:ss'), status: `received`
                 })
             }, 3000
             )
 
-        }
+        },
+        filteredList() {
+            for (let i = 0; i < this.contacts.length; i++) {
+                if (this.contacts[i].name.toLowerCase().includes(this.user.search.toLowerCase())) {
+                    this.contacts[i].visible = true
+                } else {
+                    this.contacts[i].visible = false
+                }
+            }
+
+        },
+
     }
 
+
 })
+
+
+
